@@ -1,0 +1,6 @@
+@ApiPW_HostAddress = http://localhost:5151
+
+GET {{ApiPW_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
