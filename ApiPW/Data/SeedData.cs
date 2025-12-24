@@ -10,13 +10,11 @@ namespace ApiPW.Data
             using (var context = new AppDbContext(
                 serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>()))
             {
-                // Проверка на наличие данных
                 if (context.Departments.Any())
                 {
                     return; 
                 }
 
-                // Отделения
                 var departments = new Department[]
                 {
                     new Department { Name = "Хирургическое отделение", Location = "Корпус А, 2 этаж" },
@@ -28,7 +26,6 @@ namespace ApiPW.Data
                 context.Departments.AddRange(departments);
                 context.SaveChanges();
 
-                // Типы оборудования
                 var equipmentTypes = new EquipmentType[]
                 {
                     new EquipmentType { Name = "Аппарат ИВЛ", Description = "Аппарат искусственной вентиляции легких" },
@@ -40,7 +37,6 @@ namespace ApiPW.Data
                 context.EquipmentTypes.AddRange(equipmentTypes);
                 context.SaveChanges();
 
-                // Единицы оборудования
                 var equipment = new Equipment[]
                 {
                     new Equipment {
@@ -92,7 +88,6 @@ namespace ApiPW.Data
                 context.Equipment.AddRange(equipment);
                 context.SaveChanges();
 
-                // Записи о то
                 var maintenanceRecords = new MaintenanceRecord[]
                 {
                     new MaintenanceRecord {

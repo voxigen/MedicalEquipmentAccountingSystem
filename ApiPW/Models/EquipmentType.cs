@@ -13,7 +13,6 @@ namespace ApiPW.Models
         [StringLength(500)]
         public string? Description { get; set; }
 
-        // Навигационное свойство для оборудования этого типа
         public ICollection<Equipment> Equipment { get; set; } = new List<Equipment>();
     }
 }

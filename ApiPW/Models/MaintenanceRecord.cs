@@ -27,7 +27,6 @@ namespace ApiPW.Models
         [Column(TypeName = "decimal(10,2)")]
         public decimal? Cost { get; set; }
 
-        // Навигационное свойство
         public Equipment? Equipment { get; set; }
     }
 

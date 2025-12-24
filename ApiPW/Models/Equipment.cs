@@ -21,12 +21,9 @@ namespace ApiPW.Models
         public DateTime PurchaseDate { get; set; }
 
         public decimal PurchasePrice { get; set; }
-
-        // Внешние ключи
         public int DepartmentId { get; set; }
         public int EquipmentTypeId { get; set; }
 
-        // Навигационные свойства
         public Department? Department { get; set; }
         public EquipmentType? EquipmentType { get; set; }
     }

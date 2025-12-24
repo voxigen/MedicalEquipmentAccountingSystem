@@ -18,7 +18,6 @@ namespace ApiPW.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Настройка связей
             modelBuilder.Entity<Equipment>()
                 .HasOne(e => e.Department)
                 .WithMany(d => d.Equipment)
@@ -37,7 +36,6 @@ namespace ApiPW.Data
                 .HasForeignKey(mr => mr.EquipmentId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Настройка индексов
             modelBuilder.Entity<Equipment>()
                 .HasIndex(e => e.SerialNumber)
                 .IsUnique();
